@@ -1,0 +1,11 @@
+<h1>Patients#index</h1>
+<ul>
+    <%= @patients.each do |pat| %>
+        <li>    
+        <%= link_to pat.name,pat %></li>
+    <% end %>
+</ul>
+
+# for drop model
+# bundle exec rails db:rollback
+# rails destroy model <model_name>

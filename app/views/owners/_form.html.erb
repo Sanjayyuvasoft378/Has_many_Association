@@ -1,0 +1,25 @@
+<h1>Owners#new</h1>
+<h3>Add Owner</h3>
+<%= form_with model: @owner do |form| %>
+    <p> First Name: <%= form.text_field :first_name %></p>
+    <% @owner.errors.full_messages_for(:first_name).each do |message| %>
+        <%= message %>
+    <% end %>
+    <p>Last Name: <%= form.text_field :last_name %></p>
+    <% @owner.errors.full_messages_for(:last_name).each do |message| %>
+        <%= message %>
+    <% end %>
+    <p>Occupation: <%= form.text_area :occupation %></p>
+    <% @owner.errors.full_messages_for(:occupation).each do |message| %>
+        <%= message %>
+    <% end %>
+    <p>Image url: <%= form.file_field :img_url %></p>
+    <% @owner.errors.full_messages_for(:img_url).each do |message| %>
+        <%= message %>
+    <% end %>
+    <p>Age: <%= form.number_field :age %></p>
+    <% @owner.errors.full_messages_for(:age).each do |message| %>
+        <%= message %>
+    <% end %>
+    <%= form.submit %>
+<% end %>

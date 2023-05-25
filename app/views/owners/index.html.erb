@@ -1,0 +1,14 @@
+<h1>Owners#index</h1>
+
+<ul>
+    <% @owners.each do |owner| %>
+        <li>
+            <%= link_to owner.to_s, owner_path(owner) %>
+           
+        </li>
+        <% end %>
+</ul>
+<div><%= link_to "Create Owner", new_owner_path %></div>
+<img src="https://img.etsystatic.com/il/8daee8/1445300227/il_340x270.1445300227_mitp.jpg?version=0">
+
+

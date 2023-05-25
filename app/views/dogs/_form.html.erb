@@ -1,0 +1,34 @@
+<%= form_with model: @dog do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <% @dog.errors.full_messages_for(:name).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :breed %><br>
+        <%= form.text_field :breed %><br>
+        <% @dog.errors.full_messages_for(:breed).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :age %><br>
+        <%= form.number_field :age %><br>
+        <% @dog.errors.full_messages_for(:age).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>   
+        <%= form.label :Owner %><br>
+        <%= form.collection_select :owner_id, Owner.order(:first_name), :id, :first_name %>
+        <% @dog.errors.full_messages_for(:owner_id).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+        

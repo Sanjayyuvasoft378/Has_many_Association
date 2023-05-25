@@ -1,0 +1,21 @@
+<h1>Owners#show</h1>
+
+
+<h1><%= @owner.to_s %></h1>
+<%= link_to 'Edit', edit_owner_path(@owner) %>
+<p><b>Occupation:</b> <%= @owner.occupation %></p>
+<p><b>Age:</b> <%= @owner.age %></p>
+
+<img src="<%= @owner.img_url %>" alt="Owner_img_url">
+
+<h3>Dogs</h3>
+<ul>
+  <% @owner.dogs.each do |dog| %>
+  <li><%= link_to dog.name, dog_path(dog) %></li>
+  <% end %>
+</ul><br>
+
+<p><%= link_to 'Destroy', owner_path(@owner),
+ data: { turbo_method: :delete,
+        turbo_confirm: "Are You Sure" }%></p>
+<p><%= link_to 'Go back to all owners', owners_path %></p>
